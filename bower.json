@@ -1,0 +1,28 @@
+{
+  "name": "mediaServer",
+  "version": "0.1.0",
+  "description": "A template application based on express, stylus, canJS, underscore, bootstrap, jQuery and Couchbase",
+  "main": "index.js",
+  "keywords": [
+
+  ],
+  "authors": [
+    "Fidencio Garrido"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.fidospersonal.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "canjs": "~2.1.4",
+    "underscore": "~1.8.2",
+    "bootstrap": "~3.3.4"
+  }
+}
