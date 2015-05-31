@@ -12,7 +12,8 @@ var express = require('express'),
 
 var views = [
 		{path: "/", html: "index"},
-		{path: "/about", html: "about"}
+		{path: "/about", html: "about"},
+		{path: "/editor", html: "editor"}
 	],
 	urlPrefix = "media";
 
@@ -24,6 +25,7 @@ var homeCenter = {
 		aboutAPI.setClusterId( workerId );
 		app.get( api+'/about', aboutAPI.getAbout );
 		app.get( api+'/system/ip', systemAPI.getIP );
+		app.get( api+'/system/config', systemAPI.getConfig );
 	},
 	initViews: function( workerId ){
 		console.log("Starting UI");

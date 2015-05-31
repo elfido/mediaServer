@@ -1,11 +1,37 @@
 var _about = can.Control.extend({
   sel: {
-    ifaces: ".interfaces"
+    ifaces: ".interfaces",
+    media: "[name=media]",
+    db: "[name=db]",
+    collection: "[name=collection]",
+    key: "[name=key]"
+  },
+  getConfig: function( callback ){
+    var _this = this;
+    $.ajax({
+      url: App.Config.API+'system/config',
+      success: function( data ){
+        callback( data );
+      },
+      error: function(error){
+        $(_this.sel.ifaces).html("Error =(");
+        console.dir( error );
+      }
+    });
+  },
+  renderConfig: function(){
+    var _this = this;
+    this.getConfig(function( config ){
+      $(_this.sel.media).val( config.media );
+      $(_this.sel.db).val( config.dbserver );
+      $(_this.sel.collection).val( config.collection );
+      $(_this.sel.key).val( config.applicationId );
+    });
   },
   getNicsInfo: function( callback ){
     var _this = this;
     $.ajax({
-      url: '/media/api/system/ip',
+      url: App.Config.API+'system/ip',
       success: function( data ){
         callback( data );
       },
@@ -25,6 +51,7 @@ var _about = can.Control.extend({
     });
   },
   init: function(){
+    this.renderConfig();
     this.renderNics();
   }
 });

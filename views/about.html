@@ -8,6 +8,35 @@
 {% endblock %}
 
 {% block content %}
+<h4>Settings</h4>
+<form class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Media folder</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="media" value=""/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">DB</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="db" value=""/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">DB Collection</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="collection" value=""/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Application ID</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="key" value=""/>
+    </div>
+  </div>
+  <button class="btn">Save changes</button>
+</form>
+<hr/>
 <h4>Server Interfaces</h4>
 <div class="interfaces">
 </div>
